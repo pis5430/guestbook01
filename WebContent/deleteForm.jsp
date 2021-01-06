@@ -20,13 +20,13 @@
 <title>delete</title>
 </head>
 <body>
-	<form action=".delete.jsp" method="post">
+	<form action="./delete.jsp" method="get">
 		
 		비밀번호 : <input type="text" name="password">
 		<button type="submit">확인</button><br>
 		<a href="./addList.jsp">메인으로 돌아가기</a>
-		<%-- no와 password가 일치하는지 확인하고 삭제해야함 ,  no는 눈에 보이면 안됨 --%>
-		<input type="hidden" name="no" value=<%=no %>> 
+		<%-- no와 password가 일치하는지 확인하고 삭제해야함 ,  no는 눈에 보이면 안됨 --%> 
+		<input type="hidden" name="no" value=<%=no %>>
 	
 	</form>
 

@@ -36,12 +36,15 @@
 			<td colspan="4" ><textarea rows="5" cols="70" name="content"></textarea></td>
 		</tr>	
 		<tr>
+		<%--아무것도 입력하지 않은 상태에서 확인 눌러도 값이 들어가 버리는문제 확인 --%>
 			<td colspan="4"> <button type="submit">확인</button> </td>
 		</tr>	
 	
 	</table>
 	
 </form>
+
+<br><br>
 
 
  	<%for ( int i = 0; i<guestList.size(); i++) { %>

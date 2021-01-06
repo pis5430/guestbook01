@@ -163,7 +163,7 @@ public class GuestDao {
 	
 	
 	//삭제(delete)
-	public int guestDelete(int guestNo) {
+	public int guestDelete(int no , String password) { 
 		
 		getConnection();
 		
@@ -175,11 +175,14 @@ public class GuestDao {
 			String query ="";
 			query += " delete from guestbook ";
 			query += " where no = ? ";
+			query += " and password = ? ";
+			//no와 password값 모두 맞아야 삭제
 			
 			//System.out.println(query);
 			
 			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, guestNo);
+			pstmt.setInt(1, no);
+			pstmt.setString(2, password);
 			
 			count = pstmt.executeUpdate();
 			
@@ -193,7 +196,7 @@ public class GuestDao {
 		
 		//자원정리
 		close();		
-		
+		System.out.println("[" + count + "건 삭제되었습니다.]");
 		return count;
 	}
 	
